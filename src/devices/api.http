@@ -1,0 +1,150 @@
+### Crear una lámpara
+# Este caso de prueba crea una lámpara con configuraciones específicas.
+POST http://localhost:3000/devices
+Content-Type: application/json
+
+{
+    "name": "lampara-living",
+    "type": "lamp",
+    "status": false,
+    "settings": {
+        "brightness": 80,
+        "color": "neutral-white"
+    }
+}
+
+### Crear un termostato
+# Este caso de prueba crea un termostato con una configuración específica.
+POST http://localhost:3000/devices
+Content-Type: application/json
+
+{
+    "name": "termostato-sala",
+    "type": "thermostat",
+    "status": true,
+    "settings": {
+        "temperature": 22
+    }
+}
+
+### Crear una cámara
+# Este caso de prueba crea una cámara con configuraciones específicas.
+POST http://localhost:3000/devices
+Content-Type: application/json
+
+{
+    "name": "camara-exterior",
+    "type": "camera",
+    "status": true,
+    "settings": {
+        "resolution": "1080p",
+        "frameRate": 30
+    }
+}
+
+### Obtener todos los dispositivos
+# Este caso de prueba obtiene todos los dispositivos creados.
+GET http://localhost:3000/devices
+
+### Obtener todos los dispositivos de tipo 'lamp'
+# Este caso de prueba obtiene todos los dispositivos del tipo 'lamp'.
+GET http://localhost:3000/devices?type=lamp
+
+### Obtener todos los dispositivos de tipo 'thermostat'
+# Este caso de prueba obtiene todos los dispositivos del tipo 'thermostat'.
+GET http://localhost:3000/devices?type=thermostat
+
+### Obtener todos los dispositivos de tipo 'camera'
+# Este caso de prueba obtiene todos los dispositivos del tipo 'camera'.
+GET http://localhost:3000/devices?type=camera
+
+### Obtener un dispositivo por ID
+# Este caso de prueba obtiene un dispositivo específico por su ID.
+# Reemplaza {id} con el ID real del dispositivo que deseas obtener.
+GET http://localhost:3000/devices/5f5951e5-92cf-48ed-b310-254ce5b4fe54
+
+### Actualizar un dispositivo
+# Este caso de prueba actualiza un dispositivo específico.
+# Reemplaza {id} con el ID real del dispositivo que deseas actualizar.
+PATCH  http://localhost:3000/devices/79d3c454-1a10-457b-b760-3080b40d508a
+Content-Type: application/json
+
+{
+    "name": "lampara-habitacion-actualizada",
+    "type": "lamp",
+    "status": true,
+    "settings": {
+        "brightness": 75,
+        "color": "warm-white"
+    }
+}
+
+### Eliminar un dispositivo
+# Este caso de prueba elimina un dispositivo específico.
+# Reemplaza {id} con el ID real del dispositivo que deseas eliminar.
+DELETE http://localhost:3000/devices/79d3c454-1a10-457b-b760-3080b40d508a
+
+### Crear un dispositivo con tipo no soportado
+# Este caso de prueba intenta crear un dispositivo con un tipo no soportado y debe retornar un error.
+POST http://localhost:3000/devices
+Content-Type: application/json
+
+{
+    "name": "dispositivo-desconocido",
+    "type": "unknown",
+    "status": true,
+    "settings": {}
+}
+
+### Crear un dispositivo sin el campo 'name'
+# Este caso de prueba intenta crear un dispositivo sin el campo 'name' y debe retornar un error de validación.
+POST http://localhost:3000/devices
+Content-Type: application/json
+
+{
+    "type": "lamp",
+    "status": true,
+    "settings": {
+        "brightness": 50,
+        "color": "soft-white"
+    }
+}
+
+### Crear un dispositivo sin el campo 'type'
+# Este caso de prueba intenta crear un dispositivo sin el campo 'type' y debe retornar un error de validación.
+POST http://localhost:3000/devices
+Content-Type: application/json
+
+{
+    "name": "lampara-habitacion",
+    "status": true,
+    "settings": {
+        "brightness": 50,
+        "color": "soft-white"
+    }
+}
+
+### Crear un dispositivo sin el campo 'status'
+# Este caso de prueba intenta crear un dispositivo sin el campo 'status' y debe retornar un error de validación.
+POST http://localhost:3000/devices
+Content-Type: application/json
+
+{
+    "name": "lampara-habitacion",
+    "type": "lamp",
+    "settings": {
+        "brightness": 50,
+        "color": "soft-white"
+    }
+}
+
+### Crear un dispositivo sin el campo 'settings'
+# Este caso de prueba crea un dispositivo sin el campo 'settings', que es opcional en algunos dispositivos.
+POST http://localhost:3000/devices
+Content-Type: application/json
+
+{
+    "name": "lampara-habitacion",
+    "type": "lamp",
+    "status": false
+}

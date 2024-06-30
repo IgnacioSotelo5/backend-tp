@@ -1,0 +1,37 @@
+[
+  {
+    "id": "6804288a-f095-42a3-b8d7-888986cc7d62",
+    "name": "termostato-sala",
+    "type": "thermostat",
+    "status": true,
+    "settings": {
+      "temperature": 22
+    }
+  },
+  {
+    "id": "5f5951e5-92cf-48ed-b310-254ce5b4fe54",
+    "name": "camara-exterior",
+    "type": "camera",
+    "status": true,
+    "settings": {
+      "resolution": "1080p",
+      "frameRate": 30
+    }
+  },
+  {
+    "id": "902e764a-8176-4617-bec3-42c12db5efe7",
+    "name": "lampara-habitacion",
+    "type": "lamp",
+    "status": false
+  },
+  {
+    "id": "91138f70-a067-49d0-b70e-d16b953f4285",
+    "name": "lampara-living",
+    "type": "lamp",
+    "status": false,
+    "settings": {
+      "brightness": 80,
+      "color": "neutral-white"
+    }
+  }
+]
