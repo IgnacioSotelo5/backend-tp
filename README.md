@@ -81,7 +81,7 @@ Esta API de control de domótica proporciona endpoints para gestionar escenarios
 
 ## Documentación API
 
-La documentación completa de la API está disponible en [Swagger](http://localhost:3000/api). Para acceder a la documentación, visita:
+La documentación completa de la API está disponible en [Swagger](https://swagger.io/). Para acceder a la documentación, visita:
 
      ```
      http://localhost:3000/api
