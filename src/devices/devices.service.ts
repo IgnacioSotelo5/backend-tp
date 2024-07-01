@@ -19,13 +19,13 @@ export class DevicesService {
   )
   constructor(private readonly DeviceFactory: DeviceFactory) {}
 
-  private async loadDevicesFromFile() {
+  private async loadDevicesFromFile(): Promise<Device[]> {
     try {
       if(!existsSync(this.filePath)){
         await this.saveToFile([])
       } 
       const data = await fsPromises.readFile(this.filePath, {encoding: 'utf-8'})
-      const devices = JSON.parse(data)
+      const devices = JSON.parse(data) as Device[]
       return devices
     } catch (error) {
       console.error('Error reading devices data', error)
@@ -33,7 +33,7 @@ export class DevicesService {
     }
   }
 
-  private async saveToFile(device: Device | Device[]) {
+  private async saveToFile(device: Device | Device[]): Promise<void> {
     try {
       await fsPromises.writeFile(this.filePath, JSON.stringify(device, null, 2))
     } catch (error) {

@@ -8,7 +8,6 @@ import { readFile, writeFile } from 'fs/promises'
 import { ReadFileException } from 'src/exceptions/readFile.exception'
 import { Escenario } from './entities/escenario.entity'
 import { FileWriteException } from 'src/exceptions/fileWrite.exception'
-import { DeviceFactory } from 'src/devices/device.factory'
 import { DevicesService } from 'src/devices/devices.service'
 import { Device } from 'src/devices/entities/device.entity'
 

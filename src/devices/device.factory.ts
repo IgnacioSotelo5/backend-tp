@@ -14,7 +14,7 @@ export class DeviceFactory{
         this.registerDeviceType('thermostat', Thermostat);
       }
     
-      private registerDeviceType(type: string, deviceClass: new (name: string, status: boolean, ...args: any[]) => Device) {
+      private registerDeviceType(type: string, deviceClass: new (name: string, status: boolean, ...args: any[]) => Device): void {
         this.deviceType[type] = deviceClass;
       }
     
