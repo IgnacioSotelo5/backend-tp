@@ -1,93 +1,90 @@
-# API de Control de Domótica con NestJS
+# Smart Home Control API (NestJS)
 
-Esta API de control de domótica proporciona endpoints para gestionar escenarios y dispositivos en un entorno doméstico inteligente. Utiliza NestJS para la implementación del servidor.
+A RESTful API for managing smart home scenarios and devices, built with NestJS. This project allows you to create, update, and manage home automation scenarios and their associated devices.
 
-## Funcionalidades Principales
+## Features
+- CRUD operations for scenarios and devices
+- Advanced search with query parameters
+- Data validation for all entities
+- File-based persistent storage (using Node.js fs module)
+- API documentation with Swagger
 
-1. **Operaciones CRUD**
-   - Creación, lectura, actualización y eliminación de escenarios.
-   - Gestión de dispositivos asociados a cada escenario.
+## Tech Stack
+- NestJS
+- TypeScript
+- Node.js (fs for storage)
 
-2. **Endpoints Disponibles**
+## Getting Started
 
-   - **Obtener todos los escenarios**
-     ```
-     GET http://localhost:3000/escenarios
-     ```
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
 
-   - **Obtener un escenario por ID**
-     ```
-     GET http://localhost:3000/escenarios/:id
-     ```
+### Installation
+```bash
+git clone https://github.com/IgnacioSotelo5/backend-tp.git
+cd backend-tp
+npm install
+# or
+yarn install
+```
 
-   - **Crear un nuevo escenario**
-     ```
-     POST http://localhost:3000/escenarios
-     Content-Type: application/json
+### Running the API
+```bash
+npm run start:dev
+# or
+yarn start:dev
+```
 
-     {
-       "name": "nombre del escenario",
-       "description": "descripción del escenario",
-       "devices": [
-         {
-           "id": "uuid-del-dispositivo",
-           "name": "nombre del dispositivo",
-           "type": "tipo del dispositivo",
-           "status": true,
-           "settings": {
-             "configuración específica"
-           }
-         }
-       ]
-     }
-     ```
+The API will be available at `http://localhost:3000`.
 
-   - **Actualizar un escenario existente**
-     ```
-     PATCH http://localhost:3000/escenarios/:id
-     Content-Type: application/json
+## API Endpoints
 
-     {
-       "name": "nombre actualizado",
-       "description": "descripción actualizada",
-       "devices": [
-         {
-           "id": "uuid-del-dispositivo",
-           "name": "nombre del dispositivo",
-           "type": "tipo del dispositivo",
-           "status": true,
-           "settings": {
-             "configuración actualizada"
-           }
-         }
-       ]
-     }
-     ```
+- `GET /escenarios` — Get all scenarios
+- `GET /escenarios/:id` — Get scenario by ID
+- `POST /escenarios` — Create a new scenario
+- `PATCH /escenarios/:id` — Update a scenario
+- `DELETE /escenarios/:id` — Delete a scenario
 
-   - **Eliminar un escenario**
-     ```
-     DELETE http://localhost:3000/escenarios/:id
-     ```
+See the Swagger docs for full details and request/response examples:
 
-3. **Búsqueda Avanzada**
-   - Búsqueda por características representativas de los escenarios o dispositivos mediante parámetros de consulta.
+```
+http://localhost:3000/api
+```
 
-4. **Validaciones Implementadas**
-   - Validación para datos no contemplados en la descripción de la entidad.
-   - Validación de tipos de datos para cada campo según la entidad definida.
+## Example Scenario Payload
+```json
+{
+  "name": "Living Room Evening",
+  "description": "Dim lights and play music",
+  "devices": [
+    {
+      "id": "uuid-device-1",
+      "name": "Lamp",
+      "type": "light",
+      "status": true,
+      "settings": {
+        "brightness": 50
+      }
+    }
+  ]
+}
+```
 
-5. **Almacenamiento de Datos**
-   - Los datos pueden almacenarse en memoria o en archivos. En este proyecto se prefiere el almacenamiento en archivos para una persistencia mejorada utilizando el modulo fs.
+## Project Structure
+```
+backend-tp/
+  src/
+    controllers/
+    services/
+    models/
+    ...
+```
 
-## Documentación API
+## Roadmap
+- [ ] Add authentication and authorization
+- [ ] Add unit and integration tests
+- [ ] Add support for database storage
 
-La documentación completa de la API está disponible en [Swagger](https://swagger.io/). Para acceder a la documentación, visita:
-
-     
-     http://localhost:3000/api
-     
-
-
-
-
-
+## License
+MIT
