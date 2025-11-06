@@ -15,34 +15,52 @@ import { CreateDeviceDto } from './dto/create-device.dto'
 import { UpdateDeviceDto } from './dto/update-device.dto'
 import { findOneParams } from './dto/params.dto'
 import { Device } from './entities/device.entity'
+import { ApiTags, ApiQuery } from '@nestjs/swagger'
 
+@ApiTags('Devices')
 @Controller('devices')
 export class DevicesController {
   constructor(private readonly devicesService: DevicesService) {}
 
   @Post()
-  create(@Body() createDeviceDto: CreateDeviceDto): Promise<Device> {    
-    return this.devicesService.createDevice(createDeviceDto)
+  async create(@Body() createDeviceDto: CreateDeviceDto): Promise<Device> {
+    return await this.devicesService.createDevice(createDeviceDto)
   }
 
+  @ApiQuery({
+    name: 'name',
+    required: false,
+    description: 'Filter by device name',
+  })
+  @ApiQuery({
+    name: 'type',
+    required: false,
+    description: 'Filter by device type',
+  })
   @Get()
-  findAll(@Query('name') name: string, @Query('type') type: string):Promise<Device[] | {message: string}> {
-    return this.devicesService.findAll(name, type)
+  async findAll(
+    @Query('name') name?: string,
+    @Query('type') type?: string,
+  ): Promise<Device[] | { message: string }> {
+    return await this.devicesService.findAll({ name, type })
   }
 
   @Get(':id')
-  findOne(@Param() id: findOneParams): Promise<Device> {
-    return this.devicesService.findOne(id.id)
+  async findOne(@Param() id: findOneParams): Promise<Device> {
+    return await this.devicesService.findOne(id.id)
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateDeviceDto: UpdateDeviceDto): Promise<Device> {
-    return this.devicesService.updateDevice(id, updateDeviceDto)
+  async update(
+    @Param('id') id: string,
+    @Body() updateDeviceDto: UpdateDeviceDto,
+  ): Promise<Device> {
+    return await this.devicesService.updateDevice(id, updateDeviceDto)
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('id') id: string): Promise<{message: string}> {
-    return this.devicesService.removeDevice(id)
+  async remove(@Param('id') id: string): Promise<{ message: string }> {
+    return await this.devicesService.removeDevice(id)
   }
 }

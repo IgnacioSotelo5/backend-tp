@@ -1,0 +1,124 @@
+[
+  {
+    "id": "b66c0d80-76ad-4665-9018-8d77be8162bd",
+    "name": "modo fiesta",
+    "description": "Configuración para la noche de fiesta actualizado de nuevo.",
+    "devices": [
+      {
+        "id": "cb0e69ab-3eba-491a-bf7c-20e05635ed54",
+        "name": "termostato-sala",
+        "type": "thermostat",
+        "status": true,
+        "settings": {
+          "temperature": 22
+        }
+      }
+    ]
+  },
+  {
+    "id": "b26fc3cc-7eac-414e-9e79-e98d07f76201",
+    "name": "Invierno",
+    "description": "Configuración para invierno",
+    "devices": [
+      {
+        "id": "f5041b8f-b56b-402b-957b-0026f4ba0b3f",
+        "name": "Lamp 1",
+        "type": "lamp",
+        "status": false,
+        "settings": {
+          "brightness": 50
+        }
+      },
+      {
+        "id": "bf52e6bc-16a3-4d1c-8ad6-550b2947aeab",
+        "name": "Thermostat 1",
+        "type": "thermostat",
+        "status": true,
+        "settings": {}
+      }
+    ]
+  },
+  {
+    "id": "ed002aa0-b115-457c-9866-9f8ceed40fae",
+    "name": "Verano",
+    "description": "Configuración para invierno",
+    "devices": [
+      {
+        "id": "f5041b8f-b56b-402b-957b-0026f4ba0b3f",
+        "name": "Lamp 1",
+        "type": "lamp",
+        "status": false,
+        "settings": {
+          "brightness": 50
+        }
+      },
+      {
+        "id": "bf52e6bc-16a3-4d1c-8ad6-550b2947aeab",
+        "name": "Thermostat 1",
+        "type": "thermostat",
+        "status": true,
+        "settings": {}
+      }
+    ]
+  },
+  {
+    "id": "4e22a2b2-30e8-4520-bebd-0db7883c3754",
+    "name": "Dormir",
+    "description": "Configuracion hora de dormir.",
+    "devices": [
+      {
+        "id": "bf52e6bc-16a3-4d1c-8ad6-550b2947aeab",
+        "name": "Thermostat 1",
+        "type": "thermostat",
+        "status": true,
+        "settings": {}
+      }
+    ]
+  },
+  {
+    "id": "370626bf-9c78-4319-b29f-649525756152",
+    "name": "Ahorro de energia",
+    "description": "Configuracion de ahorro de energia.",
+    "devices": [
+      {
+        "id": "bf52e6bc-16a3-4d1c-8ad6-550b2947aeab",
+        "name": "Thermostat 1",
+        "type": "thermostat",
+        "status": false,
+        "settings": {}
+      },
+      {
+        "id": "f5041b8f-b56b-402b-957b-0026f4ba0b3f",
+        "name": "Lamp 1",
+        "type": "lamp",
+        "status": false,
+        "settings": {
+          "brightness": 50
+        }
+      }
+    ]
+  },
+  {
+    "id": "1bbccea4-1928-4956-b732-9552fa967106",
+    "name": "Ahorro de energia 2",
+    "description": "Configuracion de ahorro de energia.",
+    "devices": [
+      {
+        "id": "bf52e6bc-16a3-4d1c-8ad6-550b2947aeab",
+        "name": "Thermostat 1",
+        "type": "thermostat",
+        "status": false,
+        "settings": {}
+      },
+      {
+        "id": "f5041b8f-b56b-402b-957b-0026f4ba0b3f",
+        "name": "Lamp 1",
+        "type": "lamp",
+        "status": false,
+        "settings": {
+          "brightness": 50
+        }
+      }
+    ]
+  }
+]

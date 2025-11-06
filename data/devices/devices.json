@@ -1,6 +1,45 @@
 [
   {
-    "id": "6804288a-f095-42a3-b8d7-888986cc7d62",
+    "id": "f5041b8f-b56b-402b-957b-0026f4ba0b3f",
+    "name": "Lamp 1",
+    "type": "lamp",
+    "status": false,
+    "settings": {
+      "brightness": 50
+    }
+  },
+  {
+    "id": "bf52e6bc-16a3-4d1c-8ad6-550b2947aeab",
+    "name": "Thermostat 1",
+    "type": "thermostat",
+    "status": false,
+    "settings": {}
+  },
+  {
+    "id": "2030223b-68dc-4bb6-a084-9334534a5bc2",
+    "name": "Camera 1",
+    "type": "camera",
+    "status": true,
+    "settings": {}
+  },
+  {
+    "id": "df0c1de5-1b29-40b8-b779-2f9f473d5ca1",
+    "name": "lampara-habitacion",
+    "type": "lamp",
+    "status": false
+  },
+  {
+    "id": "b7d83dd3-2353-4533-b341-6f1f4f47b16d",
+    "name": "lampara-living",
+    "type": "lamp",
+    "status": false,
+    "settings": {
+      "brightness": 80,
+      "color": "warmWhite"
+    }
+  },
+  {
+    "id": "cb0e69ab-3eba-491a-bf7c-20e05635ed54",
     "name": "termostato-sala",
     "type": "thermostat",
     "status": true,
@@ -9,7 +48,7 @@
     }
   },
   {
-    "id": "5f5951e5-92cf-48ed-b310-254ce5b4fe54",
+    "id": "b48749ca-e811-41ed-819f-eae0f6bc4de8",
     "name": "camara-exterior",
     "type": "camera",
     "status": true,
@@ -19,19 +58,9 @@
     }
   },
   {
-    "id": "902e764a-8176-4617-bec3-42c12db5efe7",
+    "id": "bebf4846-4dde-483f-a13e-bf93883bc843",
     "name": "lampara-habitacion",
     "type": "lamp",
     "status": false
-  },
-  {
-    "id": "91138f70-a067-49d0-b70e-d16b953f4285",
-    "name": "lampara-living",
-    "type": "lamp",
-    "status": false,
-    "settings": {
-      "brightness": 80,
-      "color": "neutral-white"
-    }
   }
 ]

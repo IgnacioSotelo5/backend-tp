@@ -12,7 +12,7 @@ async function bootstrap() {
       forbidNonWhitelisted: true, // evita que las propiedades no especificadas en el dto ingresen lanzando excepciones.
       transform: true, // habilita la trasnformacion de tipos de datos según las reglas definidas en los DTO.
       transformOptions: {
-        enableImplicitConversion: true, // permite la conversion implicita de tipos, por ejemplo si esperamos un string y recibimos un numero intentara convertirlo al tipo deseado 
+        enableImplicitConversion: true, // permite la conversion implicita de tipos, por ejemplo si esperamos un string y recibimos un numero intentara convertirlo al tipo deseado
       },
       //funcion fabrica de excepciones, maneja los errores de determinada manera
       exceptionFactory: (errors) => {
@@ -37,7 +37,10 @@ async function bootstrap() {
     .build()
 
   const document = SwaggerModule.createDocument(app, config)
-  SwaggerModule.setup('api', app, document)
+  SwaggerModule.setup('api', app, document, {
+    swaggerOptions: { docExpansion: 'none' },
+    customSiteTitle: 'Smart Home API Docs',
+  })
   await app.listen(3000)
 }
 bootstrap()

@@ -1,7 +1,7 @@
 import { UUID, randomUUID } from "crypto"
 import { Device } from "src/devices/entities/device.entity"
 
-export class Escenario {
+export class Scenario {
   id: UUID
   name: string
   description: string

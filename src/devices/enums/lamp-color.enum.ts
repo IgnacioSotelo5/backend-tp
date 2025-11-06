@@ -1,0 +1,20 @@
+export enum LampColor {
+    White = 'white',
+    WarmWhite = 'warmWhite',
+    Red = 'red',
+    Green = 'green',
+    Blue = 'blue',
+    Yellow = 'yellow',
+    Purple = 'purple',
+    Cyan = 'cyan',
+    Magenta = 'magenta',
+    Orange = 'orange',
+    Pink = 'pink',
+    Lime = 'lime',
+    Teal = 'teal',
+    Indigo = 'indigo',
+    Violet = 'violet',
+    Brown = 'brown',
+    Black = 'black',
+  }
+  

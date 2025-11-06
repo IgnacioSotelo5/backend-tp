@@ -9,7 +9,7 @@ Content-Type: application/json
     "status": false,
     "settings": {
         "brightness": 80,
-        "color": "neutral-white"
+        "color": "warmWhite"
     }
 }
 
@@ -58,24 +58,27 @@ GET http://localhost:3000/devices?type=thermostat
 # Este caso de prueba obtiene todos los dispositivos del tipo 'camera'.
 GET http://localhost:3000/devices?type=camera
 
+### Obtener dispositivo por nombre
+GET http://localhost:3000/devices?name=Camera 1
+
+
 ### Obtener un dispositivo por ID
 # Este caso de prueba obtiene un dispositivo específico por su ID.
 # Reemplaza {id} con el ID real del dispositivo que deseas obtener.
-GET http://localhost:3000/devices/5f5951e5-92cf-48ed-b310-254ce5b4fe54
+GET http://localhost:3000/devices/f5041b8f-b56b-402b-957b-0026f4ba0b3f
 
 ### Actualizar un dispositivo
 # Este caso de prueba actualiza un dispositivo específico.
-# Reemplaza {id} con el ID real del dispositivo que deseas actualizar.
-PATCH  http://localhost:3000/devices/79d3c454-1a10-457b-b760-3080b40d508a
+PATCH  http://localhost:3000/devices/f5041b8f-b56b-402b-957b-0026f4ba0b3f
 Content-Type: application/json
 
 {
-    "name": "lampara-habitacion-actualizada",
+    "name": "Lamp 1 updated",
     "type": "lamp",
     "status": true,
     "settings": {
         "brightness": 75,
-        "color": "warm-white"
+        "color": "white"
     }
 }
 
@@ -106,7 +109,7 @@ Content-Type: application/json
     "status": true,
     "settings": {
         "brightness": 50,
-        "color": "soft-white"
+        "color": "yellow"
     }
 }
 
@@ -134,7 +137,7 @@ Content-Type: application/json
     "type": "lamp",
     "settings": {
         "brightness": 50,
-        "color": "soft-white"
+        "color": "white"
     }
 }
 
